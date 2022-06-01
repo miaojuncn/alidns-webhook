@@ -30,7 +30,7 @@ Please find document here: https://cert-manager.io/docs/installation/kubernetes/
 
 3. Example Issuer
   ```yaml
-  apiVersion: cert-manager.io/v1alpha2
+  apiVersion: cert-manager.io/v1
   kind: ClusterIssuer
   metadata:
     name: letsencrypt-staging
@@ -38,9 +38,9 @@ Please find document here: https://cert-manager.io/docs/installation/kubernetes/
     acme:
       # Change to your letsencrypt email
       email: certmaster@example.com
-      server: https://acme-staging-v02.api.letsencrypt.org/directory
+      server: https://acme-v02.api.letsencrypt.org/directory
       privateKeySecretRef:
-        name: letsencrypt-staging-account-key
+        name: letsencrypt
       solvers:
       - dns01:
           webhook:
